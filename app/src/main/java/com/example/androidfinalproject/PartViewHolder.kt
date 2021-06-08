@@ -4,12 +4,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfinalproject.databinding.ListItemBinding
 
 class PartViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
-    private lateinit var currentPart: Part
+    private lateinit var currentStat: Stat
 
-    fun bindPart(part: Part) {
-        currentPart = part
-        binding.partType.text = currentPart.type
-        binding.partName.text = currentPart.name
-        binding.partPrice.text = currentPart.price.toString()
+    fun bindPart(part: Stat) {
+        currentStat = part
+        binding.partType.text = currentStat.name
+        binding.partPrice.text = currentStat.value
     }
 }

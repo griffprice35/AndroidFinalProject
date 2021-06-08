@@ -14,9 +14,9 @@ class FinalFragment : Fragment() {
 
     private val viewModel: PartViewModel by viewModels()
 
-    var parts: List<Part> = listOf(
-        Part("CPU", "AMD Ryzen 5 2700X", 150.00),
-        Part("GPU","NVIDIA RTX 3070", 500.00))
+    var parts: List<Stat> = listOf(
+        Stat("Example Wins", "2500"),
+        Stat("Example Losses","10,000"))
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentFinalBinding.inflate(inflater, container, false)
