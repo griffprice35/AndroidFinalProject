@@ -27,13 +27,13 @@ class PartViewModel : ViewModel() {
             }
 
             override fun onResponse(call: Call<ClashResponse>, response: Response<ClashResponse>) {
-                /*Log.d("RESPONSE", response.body().toString())*/
+               /* Log.d("RESPONSE", response.body().toString())*/
                 val listOfStatsFetched= mutableListOf<Stat>()
 
                 val usgsResponse: ClashResponse? = response.body()
 
                     val name = "Name"
-                    val value = usgsResponse?.clashWins
+                    val value = usgsResponse?.clashName
 
                     val newStat = Stat(name, value)
                     listOfStatsFetched.add(newStat)

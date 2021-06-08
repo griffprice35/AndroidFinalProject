@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.example.androidfinalproject.databinding.FragmentFinalBinding
 
 class FinalFragment : Fragment() {
@@ -14,15 +15,15 @@ class FinalFragment : Fragment() {
 
     private val viewModel: PartViewModel by viewModels()
 
-    var parts: List<Stat> = listOf(
-        Stat("Example Wins", "2500"),
-        Stat("Example Losses","10,000"))
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentFinalBinding.inflate(inflater, container, false)
-        val mAdapter = PartAdapter(parts)
-        binding.recyclerView.adapter = mAdapter
+
         viewModel.getParts()
+
+        viewModel.response.observe(viewLifecycleOwner, Observer { statList ->
+            val mAdapter = PartAdapter(statList)
+            binding.recyclerView.adapter = mAdapter
+        })
         return binding.root
     }
 
