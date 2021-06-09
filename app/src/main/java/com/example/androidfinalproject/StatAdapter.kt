@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidfinalproject.databinding.ListItemBinding
 
-class PartAdapter(val statList: List<Stat>) : RecyclerView.Adapter<PartViewHolder>(){
+class StatAdapter(val statList: List<Stat>) : RecyclerView.Adapter<StatViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PartViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StatViewHolder {
         val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PartViewHolder(binding)
+        return StatViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PartViewHolder, position: Int) {
-        val part = statList[position]
-        holder.bindPart(part)
+    override fun onBindViewHolder(holder: StatViewHolder, position: Int) {
+        val stat = statList[position]
+        holder.bindStat(stat)
     }
 
     override fun getItemCount(): Int {

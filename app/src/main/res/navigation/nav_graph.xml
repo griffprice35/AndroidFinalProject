@@ -9,7 +9,11 @@
         android:id="@+id/finalFragment"
         android:name="com.example.androidfinalproject.FinalFragment"
         android:label="fragment_final"
-        tools:layout="@layout/fragment_final" />
+        tools:layout="@layout/fragment_final" >
+        <argument
+            android:name="ID"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/submitClanInfoFragment"
         android:name="com.example.androidfinalproject.SubmitClanInfoFragment"

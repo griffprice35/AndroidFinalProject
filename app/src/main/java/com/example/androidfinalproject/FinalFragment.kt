@@ -13,7 +13,7 @@ class FinalFragment : Fragment() {
     private var _binding: FragmentFinalBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: PartViewModel by viewModels()
+    private val viewModel: StatViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentFinalBinding.inflate(inflater, container, false)
@@ -21,7 +21,7 @@ class FinalFragment : Fragment() {
         viewModel.getParts()
 
         viewModel.response.observe(viewLifecycleOwner, Observer { statList ->
-            val mAdapter = PartAdapter(statList)
+            val mAdapter = StatAdapter(statList)
             binding.recyclerView.adapter = mAdapter
         })
         return binding.root
